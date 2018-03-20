@@ -1,0 +1,30 @@
+{
+	"name": "next-manifest",
+	"version": "0.0.0",
+	"description": "Next.js plugins for Web Manifest and PWA",
+	"license": "MIT",
+	"repository": "ragingwind/next-manifest",
+	"author": {
+		"name": "Jimmy Moon",
+		"email": "ragingwind@gmail.com",
+		"url": "https://ragingwind.me"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"next",
+		"next-manifest",
+    "web manifest",
+    "manifest",
+		"pwa",
+		"progressive web app",
+		"next-plugins"
+	],
+	"dependencies": {
+	}
+}
