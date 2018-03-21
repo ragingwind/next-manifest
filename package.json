@@ -25,5 +25,8 @@
 		"progressive web app",
 		"next-plugins"
 	],
-	"dependencies": {}
+	"dependencies": {
+		"@pwa/manifest": "^1.0.0",
+		"@pwa/manifest-icons": "^1.1.0"
+	}
 }
