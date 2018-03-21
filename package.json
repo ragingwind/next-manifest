@@ -19,12 +19,11 @@
 	"keywords": [
 		"next",
 		"next-manifest",
-    "web manifest",
-    "manifest",
+		"web manifest",
+		"manifest",
 		"pwa",
 		"progressive web app",
 		"next-plugins"
 	],
-	"dependencies": {
-	}
+	"dependencies": {}
 }
