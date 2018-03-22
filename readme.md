@@ -64,7 +64,7 @@ After build is over without errors, `manifest.json` will be created at `static/m
 Web manifest must be deployed in your HTML pages using a link tag in the head of your document.
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="/static/manifest/manifest.json">
 ```
 
 ## License
