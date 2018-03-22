@@ -27,6 +27,6 @@
 	],
 	"dependencies": {
 		"@pwa/manifest": "^1.0.0",
-		"@pwa/manifest-icons": "^2.0.0"
+		"@pwa/manifest-icons": "^2.1.0"
 	}
 }
