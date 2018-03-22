@@ -1,3 +1,4 @@
+const {resolve} = require('path');
 const pwaManifest = require('@pwa/manifest');
 const pwaManifestIcons = require('@pwa/manifest-icons');
 
@@ -33,11 +34,12 @@ module.exports = (nextConfig = {}) => {
             type: 'image/png'
           }];
 
-          await pwaManifestIcons(restConfig.icons.src, manifest.icons);
-
-          manifest.icons = manifest.icons.map(i => {
-            i.src = i.src.slice(1);
-            return i
+          manifest.icons = await pwaManifestIcons({
+            src: restConfig.icons.src,
+            cache: restConfig.icons.cache || false,
+            output: resolve(process.cwd(), `./static/manifest/icons`),
+            publicPath: '/static/manifest/icons/',
+            sizes: [192, 512]
           });
         }
 
