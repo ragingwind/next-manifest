@@ -21,7 +21,11 @@ module.exports = (nextConfig = {}) => {
 
       if (!isServer && !dev) {
         const {webpack, ...restConfig} = nextConfig;
-        const manifest = await pwaManifest(restConfig);
+        const manifest = await pwaManifest({
+          "background_color": "#FFFFFF",
+          "theme_color": "#FFFFFF",
+          ...restConfig
+        });
 
         if (restConfig.icons && restConfig.icons.src) {
           manifest.icons = [{
