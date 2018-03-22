@@ -21,7 +21,7 @@ const withManifest = require('next-manifest')
 
 module.exports = withManifest({
   // you can set all most of web manifest properties except icons, which will be overwritten with new relative path.
-  ...manifestProperties
+  ...manifestProperties,
   icons: {
     // source image path to generate applications icons in various sizes for manifest. this plugin only generate two types of sizes, 192x192, 512x512.
     src: './assets/pwa-icon.png'
