@@ -4,50 +4,43 @@ const pwaManifestIcons = require('@pwa/manifest-icons');
 
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
-    async webpack(config, {
-      isServer,
-      dev,
-      buildId,
-      defaultLoaders,
-      config: {
-        distDir
-      }
-    }) {
+    async webpack(config, options) {
+			const {
+				isServer,
+				dev,
+				buildId,
+				defaultLoaders,
+				config: {
+					distDir
+				}
+			} = options
+
       if (!defaultLoaders) {
         throw new Error(
           'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
         )
       }
 
+			const {webpack, manifest} = nextConfig;
+
       if (!isServer && !dev) {
-        const {webpack, ...restConfig} = nextConfig;
-        const manifest = await pwaManifest({
+        const m = await pwaManifest({
           "background_color": "#FFFFFF",
           "theme_color": "#FFFFFF",
-          ...restConfig
+          ...manifest
         });
 
-        if (restConfig.icons && restConfig.icons.src) {
-          manifest.icons = [{
-            src: './static/manifest/icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          }, {
-            src: './static/manifest/icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }];
-
-          manifest.icons = await pwaManifestIcons({
-            src: restConfig.icons.src,
-            cache: restConfig.icons.cache || false,
+        if (manifest.icons && manifest.icons.src) {
+          m.icons = await pwaManifestIcons({
+            src: manifest.icons.src,
+            cache: manifest.icons.cache || false,
             output: resolve(process.cwd(), `./static/manifest/icons`),
             publicPath: '/static/manifest/icons/',
             sizes: [192, 512]
           });
         }
 
-        await pwaManifest.write('./static/manifest/', manifest);
+        await pwaManifest.write('./static/manifest/', m);
       }
 
       if (typeof webpack === 'function') {
