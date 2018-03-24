@@ -19,21 +19,28 @@ yarn add next-manifest
 // next.config.js
 const withManifest = require('next-manifest')
 
-module.exports = withManifest({
-  // you can set all most of web manifest properties except icons, which will be overwritten with new relative path.
-  ...manifestProperties,
-  icons: {
-    // source image path to generate applications icons in various sizes for manifest. this plugin only generate two types of sizes, 192x192, 512x512.
-    src: './assets/pwa-icon.png'
-    // true, no generate new icons every build time until images hash changed. false, generate new icons every build time
-    cache: true
-  },
+module.exports = withManifest(
+  manifest: {
+    // you can set all most of web manifest properties except icons,
+    // which will be overwritten with new relative path.
+    ...manifestProperties,
+    // redefine icons properties of web manifest to pass argument for a source icon.
+    // do not set src field if you want to keep your own icons paths.
+    icons: {
+      // source image path, to generate applications icons in various sizes for manifest.
+      // this plugin try to only generate two types of sizes, 192x192, 512x512.
+      src: './assets/pwa-icon.png'
+      // default is true, no generating for new icons every build time until images hash changed.
+      // if false is st, generate new icons every build time.
+      cache: true
+    }
+  }
 })
 ```
 
 ## manifest.json and icons
 
-After build is over without errors, `manifest.json` will be created at `static/manifest/` and icons will be generated at `static/manifest/icons`. Have a look at sample `manifest.json` generated with default values.
+After build is over without errors, `manifest.json` will be created at `static/manifest/` and also, resized icons will be generated at `static/manifest/icons`. Have a look at sample `manifest.json` below with default values.
 
 ```json
 {
