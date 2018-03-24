@@ -1,6 +1,6 @@
 {
 	"name": "next-manifest",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Next.js plugins for Web Manifest and PWA",
 	"license": "MIT",
 	"repository": "ragingwind/next-manifest",
