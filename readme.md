@@ -66,13 +66,34 @@ After build is over without errors, `manifest.json` will be created at `static/m
 ```
 
 
-## Deploying a manifest
+## Deploying a manifest with more meta for PWA
 
-Web manifest must be deployed in your HTML pages using a link tag in the head of your document.
+Web manifest must be deployed in your HTML pages using a link tag in the head of your document. not only manifest link, also two of meta, viewport and theme-color might be needed for your PWA, like below the example:
 
 ```html
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
 <link rel="manifest" href="/static/manifest/manifest.json">
 ```
+
+for your convenience, this plguin supports `Manifest` component. You can place `Manifest` component under `<Head>` component in `_document.js` with props.
+
+```js
+// pages/_document.js
+<Head>
+  <Manifest
+    // default is /static/manifest/manifest.json.
+    // most of cases, you don't need to update it. so you can skip it
+    manifestHref='/static/manifest/manifest.json'
+    // set a color to set `theme-color` meta tag into index.html
+    themeColor='#F0F0F0'
+    // set a color to set `viewport` meta tag into index.html
+    initialScale='1'
+  />
+</Head>
+```
+
+See [the example project](./exmples/hello-pwa/pages/_document.js) to understand.
 
 ## License
 

@@ -14,7 +14,8 @@
 	},
 	"scripts": {},
 	"files": [
-		"index.js"
+    "index.js",
+    "manifest.js"
 	],
 	"keywords": [
 		"next",

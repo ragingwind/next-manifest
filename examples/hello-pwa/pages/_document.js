@@ -1,5 +1,6 @@
 import Document, {Head, Main, NextScript} from 'next/document'
 import flush from 'styled-jsx/server'
+import Manifest from '../../../manifest'
 
 export default class extends Document {
 	static getInitialProps({renderPage}) {
@@ -10,13 +11,10 @@ export default class extends Document {
   }
 
 	render() {
-		return (
-			<html lang="en">
+    return (
+      <html lang="en">
 				<Head>
-					<meta charset="utf-8" />
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="theme-color" content="#000000" />
-          <link rel="manifest" href="/static/manifest/manifest.json" />
+          <Manifest themeColor="#F0F0F0" />
 					<title>Hello PWA</title>
 				</Head>
 				<body>
