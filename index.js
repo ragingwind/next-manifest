@@ -27,6 +27,7 @@ module.exports = (nextConfig = {}) => {
         const m = await pwaManifest({
           "background_color": "#FFFFFF",
           "theme_color": "#FFFFFF",
+          "start_url": "/?utm_source=web_app_manifest",
           ...manifest
         });
 
