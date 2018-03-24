@@ -93,7 +93,7 @@ for your convenience, this plguin supports `Manifest` component. You can place `
 </Head>
 ```
 
-See [the example project](./exmples/hello-pwa/pages/_document.js) to understand.
+See [the example project](https://github.com/ragingwind/next-manifest/blob/master/examples/hello-pwa/pages/_document.js) to understand.
 
 ## License
 
