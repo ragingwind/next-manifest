@@ -79,7 +79,7 @@ for your convenience, this plguin supports `Manifest` component. You can place `
 
 ```js
 // pages/_document.js
-import Manifest from 'pwa-manifest/manifest'
+import Manifest from 'next-manifest/manifest'
 
 <Head>
   <Manifest />
@@ -90,7 +90,7 @@ if you want to update the values in tags, pass the content and href value to the
 
 ```js
 // pages/_document.js
-import Manifest from 'pwa-manifest/manifest'
+import Manifest from 'next-manifest/manifest'
 
 <Head>
   <Manifest
