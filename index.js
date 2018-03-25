@@ -5,15 +5,15 @@ const pwaManifestIcons = require('@pwa/manifest-icons');
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
     async webpack(config, options) {
-			const {
-				isServer,
-				dev,
-				buildId,
-				defaultLoaders,
-				config: {
-					distDir
-				}
-			} = options
+      const {
+        isServer,
+        dev,
+        buildId,
+        defaultLoaders,
+        config: {
+          distDir
+        }
+      } = options
 
       if (!defaultLoaders) {
         throw new Error(
@@ -21,7 +21,7 @@ module.exports = (nextConfig = {}) => {
         )
       }
 
-			const {webpack, manifest} = nextConfig;
+      const {webpack, manifest} = nextConfig;
 
       if (!isServer && !dev) {
         const m = await pwaManifest({

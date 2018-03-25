@@ -1,28 +1,26 @@
 const {createElement} = require('react')
 
 const Manifest = ({
-  manifestHref = '/static/manifest/manifest.json',
-  themeColor = null,
-  initialScale = null
+  href = '/static/manifest/manifest.json',
+  themeColor = '#FFFFFF',
+  initialScale = '1'
 }) => {
-  const head = [createElement('link', {
+  const head = [
+    createElement('meta', {
+      name: "viewport",
+      content: "width=device-width",
+      "initial-scale": initialScale
+    }),
+    createElement('meta', {
+      name: "theme-color",
+      content: themeColor
+    }),
+    createElement('link', {
     rel: "manifest",
-    href: manifestHref
+    href: href
   })]
-
-  initialScale && head.unshift(createElement('meta', {
-    name: "viewport",
-    content: "width=device-width",
-    "initial-scale": initialScale
-  }))
-
-  themeColor && head.unshift(createElement('meta', {
-    name: "theme-color",
-    content: themeColor
-  }))
 
   return head
 }
-
 
 module.exports = Manifest
