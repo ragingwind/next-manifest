@@ -3,25 +3,25 @@ import flush from 'styled-jsx/server'
 import Manifest from '../../../manifest'
 
 export default class extends Document {
-	static getInitialProps({renderPage}) {
-		return {
-			...renderPage(),
-			styles: flush()
-		}
+  static getInitialProps({renderPage}) {
+    return {
+      ...renderPage(),
+      styles: flush()
+    }
   }
 
-	render() {
+  render() {
     return (
       <html lang="en">
-				<Head>
+        <Head>
           <Manifest themeColor="#F0F0F0" />
-					<title>Hello PWA</title>
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</html>
-		)
-	}
+          <title>Hello PWA</title>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
+  }
 }
