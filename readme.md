@@ -92,9 +92,9 @@ if you want to update the values in tags, pass the content and href value to the
   <Manifest
     // path for manifest will be deploying
     href='/static/manifest/manifest.json'
-    // set a color to set `theme-color` meta tag into index.html
+    // color for `theme-color`
     themeColor='#F0F0F0'
-    // set a color to set `viewport` meta tag into index.html
+    // scale for `viewport` meta tag
     initialScale='1'
   />
 </Head>
