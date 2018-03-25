@@ -21,17 +21,16 @@ const withManifest = require('next-manifest')
 
 module.exports = withManifest(
   manifest: {
-    // you can set all most of web manifest properties except icons,
-    // which will be overwritten with new relative path.
+    // all of manifest properties.
     ...manifestProperties,
-    // redefine icons properties of web manifest to pass argument for a source icon.
-    // do not set src field if you want to keep your own icons paths.
+    // if src value is exist, icon image will be generated from src image, and ovwewritten
+    // icons value exist in the properties. if you want to keep your own icons path? do not pass
+    // src path to this plugin
     icons: {
-      // source image path, to generate applications icons in various sizes for manifest.
-      // this plugin try to only generate two types of sizes, 192x192, 512x512.
+      // source image path, to generate applications icons in 192x192, 512x512 sizes for manifest.
       src: './assets/pwa-icon.png'
-      // default is true, no generating for new icons every build time until images hash changed.
-      // if false is st, generate new icons every build time.
+      // default is true, cache images until the hash value of source image has changed
+      // if false, generating new icon images while every build time.
       cache: true
     }
   }
@@ -81,10 +80,18 @@ for your convenience, this plguin supports `Manifest` component. You can place `
 ```js
 // pages/_document.js
 <Head>
+  <Manifest />
+</Head>
+```
+
+if you want to update the values in tags, pass the content and href value to the component
+
+```js
+// pages/_document.js
+<Head>
   <Manifest
-    // default is /static/manifest/manifest.json.
-    // most of cases, you don't need to update it. so you can skip it
-    manifestHref='/static/manifest/manifest.json'
+    // path for manifest will be deploying
+    href='/static/manifest/manifest.json'
     // set a color to set `theme-color` meta tag into index.html
     themeColor='#F0F0F0'
     // set a color to set `viewport` meta tag into index.html
