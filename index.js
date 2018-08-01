@@ -37,7 +37,8 @@ module.exports = (nextConfig = {}) => {
             cache: manifest.icons.cache || false,
             output: resolve(process.cwd(), `./static/manifest/icons`),
             publicPath: '/static/manifest/icons/',
-            sizes: [192, 512]
+            sizes: manifest.icons.sizes || [192, 512]
+
           });
         }
 
