@@ -21,18 +21,23 @@ const withManifest = require('next-manifest')
 
 module.exports = withManifest(
   manifest: {
-    // all of manifest properties.
+    // all of the manifest properties, @see https://developers.google.com/web/fundamentals/web-app-manifest/
     ...manifestProperties,
-    // if src value is exist, icon image will be generated from src image, and ovwewritten
-    // icons value exist in the properties. if you want to keep your own icons path? do not pass
-    // src path to this plugin
+    // if you supply a src icon:
+    // - icon(s) will be auto generated (at build time), according to sizes given below in "sizes:"
+    // - any existing icon paths will be overwritten - so do not supply a src icon if you wish to 
+    // retain paths in the manifest file! 
     icons: {
-      // source image path, to generate applications icons in 192x192, 512x512 sizes for manifest.
-      src: './assets/pwa-icon.png'
+      // source image path, supply this to generate applications icons as per "sizes"
+      src: './assets/pwa-icon.png',
       // default is true, cache images until the hash value of source image has changed
-      // if false, generating new icon images while every build time.
-      cache: true
-    }
+      // if false, new icon images will be generated every build time.
+      cache: true,
+      // default icon sizes are 192x192, 512x512 
+      // @see https://developers.google.com/web/fundamentals/web-app-manifest/#icons
+      // provide an array of sizes to override the default if you want to fine tune your icons
+      // e.g. [72,96,128,144,152,192,384,512]
+      sizes: [192, 512, ...]
   }
 })
 ```
