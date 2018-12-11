@@ -7,6 +7,7 @@
 ```sh
 npm install --save next-manifest
 ```
+
 or
 
 ```sh
@@ -17,9 +18,9 @@ yarn add next-manifest
 
 ```js
 // next.config.js
-const withManifest = require('next-manifest')
+const withManifest = require('next-manifest');
 
-module.exports = withManifest(
+module.exports = withManifest({
   manifest: {
     // all of manifest properties.
     ...manifestProperties,
@@ -28,13 +29,13 @@ module.exports = withManifest(
     // src path to this plugin
     icons: {
       // source image path, to generate applications icons in 192x192, 512x512 sizes for manifest.
-      src: './assets/pwa-icon.png'
+      src: './assets/pwa-icon.png',
       // default is true, cache images until the hash value of source image has changed
       // if false, generating new icon images while every build time.
       cache: true
     }
   }
-})
+});
 ```
 
 ## manifest.json and icons
@@ -64,7 +65,6 @@ After build is over without errors, `manifest.json` will be created at `static/m
 }
 ```
 
-
 ## Deploying a manifest with more meta for PWA
 
 Web manifest must be deployed in your HTML pages using a link tag in the head of your document. not only manifest link, also two of meta, viewport and theme-color might be needed for your PWA, like below the example:
@@ -72,7 +72,7 @@ Web manifest must be deployed in your HTML pages using a link tag in the head of
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="theme-color" content="#000000" />
-<link rel="manifest" href="/static/manifest/manifest.json">
+<link rel="manifest" href="/static/manifest/manifest.json" />
 ```
 
 for your convenience, this plguin supports `Manifest` component. You can place `Manifest` component under `<Head>` component in `_document.js` with props.
