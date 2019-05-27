@@ -15,7 +15,6 @@ export default class extends Document {
       <html lang="en">
         <Head>
           <Manifest themeColor="#F0F0F0" />
-          <title>Hello PWA</title>
         </Head>
         <body>
           <Main />
