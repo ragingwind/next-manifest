@@ -54,7 +54,7 @@ Web manifest must be declared in your HTML pages using a link tag at the head of
 <link rel="manifest" href="/static/manifest/manifest.json" />
 ```
 
-for your convenience, this plguin supports `Manifest` component. You can place `Manifest` component under `<Head>` component in `_document.js` with props.
+for your convenience, this plugin supports `Manifest` component. You can place `Manifest` component under `<Head>` component in `_document.js` with props.
 
 ```js
 // pages/_document.js
