@@ -4,7 +4,7 @@ const pwaManifestIcons = require('@pwa/manifest-icons');
 
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
-    async webpack(config, options) {
+    webpack(config, options) {
       const {
         isServer,
         dev,
@@ -24,7 +24,7 @@ module.exports = (nextConfig = {}) => {
       const {webpack, manifest} = nextConfig;
 
       if (!isServer && !dev) {
-        const m = await pwaManifest({
+        const m = pwaManifest.sync({
           "background_color": "#FFFFFF",
           "theme_color": "#FFFFFF",
           "start_url": "/?utm_source=web_app_manifest",
@@ -32,7 +32,7 @@ module.exports = (nextConfig = {}) => {
         });
 
         if (manifest.icons && manifest.icons.src) {
-          m.icons = await pwaManifestIcons({
+          m.icons = pwaManifestIcons.sync({
             src: manifest.icons.src,
             cache: manifest.icons.cache || false,
             output: resolve(process.cwd(), `./static/manifest/icons`),
@@ -42,7 +42,7 @@ module.exports = (nextConfig = {}) => {
           });
         }
 
-        await pwaManifest.write('./static/manifest/', m);
+        pwaManifest.writeSync('./static/manifest/', m);
       }
 
       if (typeof webpack === 'function') {

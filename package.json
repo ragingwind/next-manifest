@@ -27,7 +27,7 @@
 		"next-plugins"
 	],
 	"dependencies": {
-		"@pwa/manifest": "^1.0.0",
-		"@pwa/manifest-icons": "^2.1.0"
+		"@pwa/manifest": "^1.1.0",
+		"@pwa/manifest-icons": "^3.1.0"
 	}
 }
