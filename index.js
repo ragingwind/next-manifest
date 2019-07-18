@@ -24,7 +24,7 @@ module.exports = (nextConfig = {}) => {
       config.plugins.push(
         new NextManifestPlugin({
           isServer,
-          runInDevMode: manifest.runInDevMode || !dev,
+          buildInDevMode: manifest.buildInDevMode || !dev,
           manifest,
           outputDirector: config.output.path,
         })

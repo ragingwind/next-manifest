@@ -6,11 +6,11 @@ const pwaManifestIcons = require('@pwa/manifest-icons');
 
 module.exports = ({
   isServer,
-  runInDevMode,
+  buildInDevMode,
   manifest,
   outputDirector
 }) => {
-  if (!isServer && runInDevMode) {
+  if (!isServer && buildInDevMode) {
     const m = pwaManifest.sync({
       "background_color": "#FFFFFF",
       "theme_color": "#FFFFFF",
