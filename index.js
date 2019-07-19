@@ -26,7 +26,6 @@ module.exports = (nextConfig = {}) => {
           isServer,
           buildInDevMode: manifest.buildInDevMode || !dev,
           manifest,
-          outputDirector: config.output.path,
         })
       );
 

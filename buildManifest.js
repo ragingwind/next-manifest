@@ -1,5 +1,5 @@
 const {
-  join
+  resolve
 } = require('path');
 const pwaManifest = require('@pwa/manifest');
 const pwaManifestIcons = require('@pwa/manifest-icons');
@@ -7,8 +7,7 @@ const pwaManifestIcons = require('@pwa/manifest-icons');
 module.exports = ({
   isServer,
   buildInDevMode,
-  manifest,
-  outputDirector
+  manifest
 }) => {
   if (!isServer && buildInDevMode) {
     const m = pwaManifest.sync({
@@ -22,13 +21,13 @@ module.exports = ({
       m.icons = pwaManifestIcons.sync({
         src: manifest.icons.src,
         cache: manifest.icons.cache || false,
-        output: join(outputDirector, 'static/manifest/icons'),
+        output: resolve(process.cwd(), './static/manifest/icons'),
         publicPath: '/static/manifest/icons/',
         sizes: manifest.icons.sizes || [192, 512]
 
       });
     }
 
-    pwaManifest.writeSync(join(outputDirector, 'static/manifest/'), m);
+    pwaManifest.writeSync('./static/manifest/', m);
   }
 }
