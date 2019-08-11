@@ -1,4 +1,3 @@
-const { resolve } = require('path');
 const withManifest = require('next-manifest');
 
 module.exports = withManifest({
