@@ -1,7 +1,7 @@
 const {createElement} = require('react')
 
 const Manifest = ({
-  href = '/static/manifest/manifest.json',
+  href = '/static/manifest.json',
   themeColor = '#FFFFFF',
   initialScale = '1'
 }) => {

@@ -2,6 +2,10 @@
 
 > Next.js plugin for [Web Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and PWA
 
+# Updates
+
+After 4.0.1, icon generating is deprecated because of `worker_threads` is not supported on now platform
+
 # Installation
 
 ```sh
@@ -20,6 +24,10 @@ yarn add next-manifest
 // next.config.js
 const withManifest = require('next-manifest');
 const defaults = {
+  // next-manifest options
+  outout: './static'/',
+  // manifest options
+  name: 'PWA',
   icons: [
     {
       "src": "/static/icons/icon-192x192.png",
@@ -40,9 +48,9 @@ module.exports = withManifest({
 });
 ```
 
-## manifest.json and icons
+## manifest.json
 
-After build is over without errors, `manifest.json` will be created at `static/manifest/`
+After build is over without errors, `manifest.json` will be created at `output`
 
 ## Deploying a manifest with more meta for PWA
 
@@ -87,4 +95,4 @@ See [the example project](https://github.com/ragingwind/next-manifest/blob/maste
 
 ## License
 
-MIT © [Jimmy Moon](https://ragingwind.me)
+MIT © [Jimmy Moon](https://jimmymoon.dev)

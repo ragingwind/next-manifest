@@ -14,7 +14,7 @@ export default class extends Document {
     return (
       <html lang="en">
         <Head>
-          <Manifest themeColor="#F0F0F0" />
+          <Manifest href={"/static/manifest.json"} themeColor={"#F0F0F0"} />
         </Head>
         <body>
           <Main />
