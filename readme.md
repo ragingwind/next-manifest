@@ -4,7 +4,7 @@
 
 # Updates
 
-After 4.0.1, icon generating is deprecated because of `worker_threads` is not supported on now platform
+- After 3.x, icon generating is deprecated because of `worker_threads` is not supported on now platform.
 
 # Installation
 
