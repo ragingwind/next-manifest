@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "next-manifest",
+  "alias": ["next-manifest.now.sh"],
+  "routes": [],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+}
