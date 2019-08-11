@@ -1,33 +1,33 @@
 {
-	"name": "next-manifest",
-	"version": "2.0.0",
-	"description": "Next.js plugins for Web Manifest and PWA",
-	"license": "MIT",
-	"repository": "ragingwind/next-manifest",
-	"author": {
-		"name": "Jimmy Moon",
-		"email": "ragingwind@gmail.com",
-		"url": "https://ragingwind.me"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"scripts": {},
-	"files": [
-		"index.js",
-		"manifest.js"
-	],
-	"keywords": [
-		"next",
-		"next-manifest",
-		"web manifest",
-		"manifest",
-		"pwa",
-		"progressive web app",
-		"next-plugins"
-	],
-	"dependencies": {
-		"@pwa/manifest": "^1.1.0",
-		"@pwa/manifest-icons": "^3.1.0"
-	}
+  "name": "next-manifest",
+  "version": "2.0.0",
+  "description": "Next.js plugins for Web Manifest and PWA",
+  "license": "MIT",
+  "repository": "ragingwind/next-manifest",
+  "author": {
+    "name": "Jimmy Moon",
+    "email": "ragingwind@gmail.com",
+    "url": "https://ragingwind.me"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {},
+  "files": [
+    "index.js",
+    "manifest.js"
+  ],
+  "keywords": [
+    "next",
+    "next-manifest",
+    "web manifest",
+    "manifest",
+    "pwa",
+    "progressive web app",
+    "next-plugins"
+  ],
+  "dependencies": {
+    "@pwa/manifest": "^1.1.0",
+    "@pwa/manifest-icons": "^4.0.0"
+  }
 }
