@@ -41,3 +41,5 @@ module.exports = (nextConfig = {}) => {
     }
   })
 }
+
+module.exports.Manifest = require('./manifest.js');
