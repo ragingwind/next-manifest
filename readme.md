@@ -25,7 +25,7 @@ yarn add next-manifest
 const withManifest = require('next-manifest');
 const defaults = {
   // next-manifest options
-  outout: './static'/',
+  output: './static/', // The folder where the manifest will be generated.
   // manifest options
   name: 'PWA',
   icons: [
