@@ -8,7 +8,7 @@
     "start": "./server.js --port=3000"
   },
   "dependencies": {
-    "next": "^8.1.0",
+    "next": "^9.3.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
